@@ -23,17 +23,17 @@
       padding:0 20px 40px;
     }
 
-    /* HERO עם V עמוק */
+    /* HERO */
     .hero{
       position:relative;
       width:100%;
-      height:380px;                                    /* גבוה יותר */
+      height:340px; /* יותר קומפקטי */
       background:url('building.png') center top/cover no-repeat;
       overflow:hidden;
       display:flex;
       align-items:flex-end;
       justify-content:center;
-      clip-path:ellipse(90% 50% at 50% 0%);            /* V עמוק */
+      clip-path:ellipse(95% 45% at 50% 0%);
     }
     .hero::after{
       content:"";
@@ -41,61 +41,103 @@
       background:rgba(0,0,0,.45);
     }
 
-    /* לוגו במרכז חצי עליון של ה-V */
+    /* לוגו */
     header{
       position:absolute;
-      top:38%;                                         /* למעלה בתוך הקימור */
-      left:50%; transform:translate(-50%,-50%);
-      z-index:2; text-align:center;
+      top:38%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      z-index:2;
+      text-align:center;
     }
     header img{
-      height:92px;
+      height:90px;
       filter:drop-shadow(0 2px 6px rgba(0,0,0,.35));
     }
 
-    /* פרופיל חותך את הקימור */
+    /* תמונת עו"ד */
     .photo{
-      width:160px; height:160px; border-radius:50%; overflow:hidden;
-      margin:-85px auto 22px;                          /* עולה לתוך ה-V */
+      width:160px;
+      height:160px;
+      border-radius:50%;
+      overflow:hidden;
+      margin:-95px auto 15px; /* עלתה למעלה */
       border:4px solid var(--gold);
       box-shadow:0 0 15px rgba(0,0,0,.5);
-      position:relative; z-index:3;
+      position:relative;
+      z-index:3;
       background:#1b273d;
     }
     .photo img{width:100%;height:100%;object-fit:cover}
 
-    h1{margin:6px 0 0;font-size:22px;color:#fff;text-align:center}
-    h2{margin:6px 0 20px;font-size:15px;color:var(--gold);font-weight:400;text-align:center}
+    h1{
+      margin:6px 0 0;
+      font-size:22px;
+      color:#fff;
+      text-align:center;
+    }
+    h2{
+      margin:6px 0 16px;
+      font-size:15px;
+      color:var(--gold);
+      font-weight:400;
+      text-align:center;
+    }
 
-    /* רשת כפתורים – עיגולים + טקסט מתחת */
+    /* כפתורים */
     .actions{
       display:grid;
       grid-template-columns:repeat(3, 1fr);
-      gap:22px 28px;
+      gap:18px 24px;
       width:100%;
-      max-width:430px;
+      max-width:420px;
       justify-items:center;
+      margin-top:10px; /* קרוב יותר לתמונה */
     }
-    .action{display:flex;flex-direction:column;align-items:center;gap:8px}
+    .action{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:8px;
+    }
     .btn{
-      width:78px;height:78px;border-radius:50%;
-      display:flex;align-items:center;justify-content:center;
+      width:78px;
+      height:78px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       border:1px solid var(--gold);
       background:rgba(255,255,255,.08);
       color:var(--gold);
       text-decoration:none;
       transition:.25s;
     }
-    .btn:hover{background:var(--gold);color:var(--bg)}
-    .btn svg{width:26px;height:26px}
-    .label{font-size:12px;color:var(--gold);opacity:.95}
+    .btn:hover{
+      background:var(--gold);
+      color:var(--bg);
+    }
+    .btn svg{
+      width:26px;
+      height:26px;
+    }
+    .label{
+      font-size:12px;
+      color:var(--gold);
+      opacity:.95;
+    }
 
-    footer{margin-top:32px;font-size:13px;color:#ccc;text-align:center}
+    footer{
+      margin-top:30px;
+      font-size:13px;
+      color:#ccc;
+      text-align:center;
+    }
 
     @media (max-width:360px){
-      .hero{height:360px}
-      .photo{width:148px;height:148px;margin:-78px auto 18px}
-      .btn{width:72px;height:72px}
+      .hero{height:320px}
+      .photo{width:145px;height:145px;margin:-80px auto 12px}
+      .btn{width:70px;height:70px}
     }
   </style>
 </head>
@@ -113,56 +155,50 @@
     <img src="lawyer.png" alt="תמונת עו״ד ג׳לאל דקואר">
   </div>
 
-  <!-- כותרות -->
+  <!-- טקסט -->
   <h1>עו״ד ג׳לאל עמאד דקואר</h1>
   <h2>מקרקעין | יזמות ובנייה | דיני חוזים</h2>
 
   <!-- כפתורים -->
   <div class="actions">
     <div class="action">
-      <a href="https://www.facebook.com/dakwar.law" class="btn" title="Facebook" aria-label="Facebook">
-        <!-- Facebook SVG -->
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.3.2 2.3.2v2.6h-1.3c-1.3 0-1.7.8-1.7 1.6V12h2.9l-.5 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
-      </a>
-      <div class="label">פייסבוק</div>
-    </div>
-
-    <div class="action">
-      <a href="https://wa.me/972507863448" class="btn" title="WhatsApp" aria-label="WhatsApp">
-        <!-- WhatsApp SVG -->
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 3.9A10 10 0 0 0 3.2 17.7L2 22l4.4-1.2A10 10 0 1 0 20 3.9zm-8 17a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-2.5.7.7-2.4-.2-.3a8.3 8.3 0 1 1 6.5 3.4zm4.6-6.3c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1c-.1.2-.7.8-.8 1-.1.1-.3.2-.6.1-1.6-.6-2.8-1.7-3.6-3.1-.2-.3 0-.4.1-.6.1-.1.2-.3.3-.4.1-.2.1-.3.2-.4.1-.1 0-.3 0-.4l-.8-2c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.4.2-.6.4-.2.3-.8.8-.8 2s.8 2.3.9 2.4c.1.2 1.6 2.5 3.9 3.5 2.3 1.1 2.4.8 2.8.7.4-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.1-.4-.2z"/></svg>
-      </a>
-      <div class="label">וואטסאפ</div>
-    </div>
-
-    <div class="action">
       <a href="tel:048621216" class="btn" title="טלפון" aria-label="טלפון">
-        <!-- Phone SVG -->
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1 .3 2 .5 3 .5.7 0 1.2.5 1.2 1.2V20c0 .7-.5 1.2-1.2 1.2A17.6 17.6 0 0 1 3 6.2C3 5.5 3.5 5 4.2 5H7c.7 0 1.2.5 1.2 1.2 0 1 .2 2 .5 3 .1.4 0 .9-.3 1.2l-1.8 1.4z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1 .3 2 .5 3 .5.7 0 1.2.5 1.2 1.2V20c0 .7-.5 1.2-1.2 1.2A17.6 17.6 0 0 1 3 6.2C3 5.5 3.5 5 4.2 5H7c.7 0 1.2.5 1.2 1.2 0 1 .2 2 .5 3 .1.4 0 .9-.3 1.2l-1.8 1.4z"/></svg>
       </a>
       <div class="label">טלפון</div>
     </div>
 
     <div class="action">
+      <a href="https://wa.me/972507863448" class="btn" title="וואטסאפ" aria-label="וואטסאפ">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 3.9A10 10 0 0 0 3.2 17.7L2 22l4.4-1.2A10 10 0 1 0 20 3.9zm-8 17a8.3 8.3 0 0 1-4.2-1.2l-.3-.2-2.5.7.7-2.4-.2-.3a8.3 8.3 0 1 1 6.5 3.4zm4.6-6.3c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1c-.1.2-.7.8-.8 1-.1.1-.3.2-.6.1-1.6-.6-2.8-1.7-3.6-3.1-.2-.3 0-.4.1-.6.1-.1.2-.3.3-.4.1-.2.1-.3.2-.4.1-.1 0-.3 0-.4l-.8-2c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.4.2-.6.4-.2.3-.8.8-.8 2s.8 2.3.9 2.4c.1.2 1.6 2.5 3.9 3.5 2.3 1.1 2.4.8 2.8.7.4-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.1-.4-.2z"/></svg>
+      </a>
+      <div class="label">וואטסאפ</div>
+    </div>
+
+    <div class="action">
+      <a href="https://www.facebook.com/dakwar.law" class="btn" title="פייסבוק" aria-label="פייסבוק">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.3.2 2.3.2v2.6h-1.3c-1.3 0-1.7.8-1.7 1.6V12h2.9l-.5 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+      </a>
+      <div class="label">פייסבוק</div>
+    </div>
+
+    <div class="action">
       <a href="https://www.waze.com/he/live-map/directions?to=ll.32.814338%2C34.997828" class="btn" title="ניווט" aria-label="ניווט">
-        <!-- Pin/Map SVG -->
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a9 9 0 0 0-9 9c0 6.1 8.2 11 8.6 11.2.2.1.6.1.8 0C12.8 22 21 17.1 21 11A9 9 0 0 0 12 2zm0 12.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a9 9 0 0 0-9 9c0 6.1 8.2 11 8.6 11.2.2.1.6.1.8 0C12.8 22 21 17.1 21 11A9 9 0 0 0 12 2zm0 12.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg>
       </a>
       <div class="label">ניווט</div>
     </div>
 
     <div class="action">
       <a href="mailto:jalal@dakwar-law.com" class="btn" title="מייל" aria-label="מייל">
-        <!-- Mail SVG -->
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
       </a>
       <div class="label">מייל</div>
     </div>
 
     <div class="action">
       <a href="vcard.vcf" class="btn" title="הוסף לאנשי קשר" aria-label="הוסף לאנשי קשר">
-        <!-- Add-user SVG -->
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15 12a5 5 0 1 0-10 0 5 5 0 0 0 10 0zm6 6v2H3v-2a6 6 0 0 1 12 0h6zm-4-8V8h-2V6h2V4h2v2h2v2h-2v2h-2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15 12a5 5 0 1 0-10 0 5 5 0 0 0 10 0zm6 6v2H3v-2a6 6 0 0 1 12 0h6zm-4-8V8h-2V6h2V4h2v2h2v2h-2v2h-2z"/></svg>
       </a>
       <div class="label">אנשי קשר</div>
     </div>
