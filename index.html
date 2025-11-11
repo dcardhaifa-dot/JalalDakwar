@@ -25,13 +25,13 @@
     .hero{
       position:relative;
       width:100%;
-      height:340px;
+      height:360px;
       background:url('building.png') center top/cover no-repeat;
       overflow:hidden;
       display:flex;
-      align-items:center;
+      align-items:flex-end;
       justify-content:center;
-      clip-path:ellipse(80% 50% at 50% 10%);
+      clip-path:ellipse(85% 45% at 50% 0%);
     }
     .hero::after{
       content:'';
@@ -39,9 +39,16 @@
       inset:0;
       background:rgba(0,0,0,.45);
     }
-    header{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:auto;text-align:center;z-index:2}
+    header{
+      position:absolute;
+      top:45%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      text-align:center;
+      z-index:2;
+    }
     header img{
-      height:85px;
+      height:90px;
       filter:drop-shadow(0 2px 6px rgba(0,0,0,.35));
     }
     .photo{
@@ -49,24 +56,23 @@
       height:150px;
       border-radius:50%;
       overflow:hidden;
-      margin:-10px auto 18px; /* הורדנו את הפרופיל למטה כך שהעיגול מתיישב מתחת ל-V */
+      margin:-40px auto 25px;
       border:4px solid var(--gold);
       box-shadow:0 0 15px rgba(0,0,0,.5);
       position:relative;
-      z-index:2;
+      z-index:3;
     }
     .photo img{width:100%;height:100%;object-fit:cover}
 
     h1{margin:5px 0 0;font-size:22px;color:#fff}
     h2{margin:5px 0 22px;font-size:15px;color:var(--gold);font-weight:400}
 
-    .buttons{display:flex;flex-wrap:wrap;gap:18px 20px;width:100%;max-width:360px;margin:0 auto 22px;justify-content:center}
-    .btn{width:80px;height:80px;border-radius:16px;background:rgba(255,255,255,.08);border:1px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:24px;color:var(--gold);text-decoration:none;transition:.25s}
+    .buttons{display:grid;grid-template-columns:repeat(3,80px);gap:20px 30px;justify-content:center;margin-top:10px}
+    .btn{width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:24px;color:var(--gold);text-decoration:none;transition:.25s}
     .btn svg{width:26px;height:26px}
     .btn span{font-size:11px;letter-spacing:.2px;color:var(--gold);opacity:.95}
     .btn:hover{background:var(--gold);color:#0f1a2b}
     .btn:hover span{color:#0f1a2b}
-    .btn:hover{background:var(--gold);color:#0f1a2b}
 
     footer{margin-top:auto;font-size:13px;color:#ccc;text-align:center}
   </style>
