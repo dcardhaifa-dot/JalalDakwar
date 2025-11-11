@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Dakwar;Jalal;;Adv.;
+FN:עו"ד ג׳לאל עמאד דקואר
+ORG:משרד עורכי דין ג׳לאל דקואר
+TITLE:עורך דין
+TEL;TYPE=work,voice:+972-4-8621216
+TEL;TYPE=cell,voice:+972-50-7863448
+EMAIL;TYPE=work:jalal@dakwar-law.com
+ADR;TYPE=work:;;חיפה, ישראל;;;
+URL:https://www.facebook.com/dakwar.law
+PHOTO;ENCODING=b;TYPE=PNG:iVBORw0KGgoAAAANSUhEUgAAAAUA
+AAABCAIAAACQd1PeAAAAFElEQVR4nGNgYGD4z0AEYBxVSFUBAAAgDA
+LrOqwaAAAAAElFTkSuQmCC
+END:VCARD
