@@ -21,6 +21,15 @@
 
     .wrap{width:100%;max-width:520px;min-height:100vh;padding:0 20px 28px;display:flex;flex-direction:column;align-items:center}
 
+    .lang-switch{align-self:flex-end;margin:10px 0 4px;display:flex;gap:6px}
+    .lang-btn{border:1px solid var(--gold);background:transparent;color:var(--gold);border-radius:999px;padding:4px 10px;font-size:11px;cursor:pointer}
+    .lang-btn.active{background:var(--gold);color:var(--bg)}
+
+    .access-toggle{position:fixed;bottom:18px;left:18px;width:44px;height:44px;border-radius:50%;border:1px solid #ddd;background:#ffffff;color:#000;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+    body.access-on{font-size:110%;background:#000}
+    body.access-on h1,body.access-on h2{color:#fff}
+    body.access-on .hero::after{background:rgba(0,0,0,.7)}
+
     /* רקע עם כימור קטן */
     .hero{position:relative;width:100%;height:180px;background:url('building.png') center/cover no-repeat;overflow:hidden;border-bottom-left-radius:40% 15%;border-bottom-right-radius:40% 15%;}
     .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.15))}
@@ -48,6 +57,7 @@
 </head>
 <body>
   <main class="wrap">
+    
     <div class="hero">
       <header>
         <img src="logo.png" alt="לוגו המשרד">
@@ -57,7 +67,7 @@
     <div class="photo"><img src="lawyer.png" alt="תמונת עו"ד ג׳לאל דקואר"></div>
 
     <h1>עו״ד ג׳לאל עמאד דקואר</h1>
-    <h2>מקרקעין | יזמות ובנייה | דיני חוזים</h2>
+    <h2>דיני נזיקין | רשויות מקומיות ומנהלי | משפט וטכנולוגיה | משפט בינלאומי וזכויות אדם</h2>
 
     <section class="actions">
       <div class="action">
@@ -97,13 +107,70 @@
 
       <div class="action">
         <a href="vcard.vcf" class="btn" title="הוסף לאנשי קשר" aria-label="הוסף לאנשי קשר">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15 12a5 5 0 1 0-10 0 5 5 0 0 0 10 0zm6 6v2H3v-2a6 6 0 0 1 12 0h6zm-4-8V8h-2V6h2V4h2v2h2v2h-2v2h-2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" fill="var(--gold)"/>
+            <circle cx="12" cy="9" r="3" fill="var(--bg)"/>
+            <path d="M12 12.5c-2.4 0-4.2 1.4-5 3.4 1 .9 2.7 1.6 5 1.6s4-.7 5-1.6c-.8-2-2.6-3.4-5-3.4z" fill="var(--bg)"/>
+          </svg>
         </a>
         <div class="label">אנשי קשר</div>
       </div>
+          <div class="action">
+        <a href="https://www.psakdin.co.il/Lawyers/3582" class="btn" title="על המשרד" aria-label="על המשרד">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 20V8l7-4 7 4v12h-4v-5h-6v5H5z" fill="currentColor"/>
+            <rect x="10" y="11" width="1.7" height="1.7" fill="#0f1a2b"/>
+            <rect x="12.3" y="11" width="1.7" height="1.7" fill="#0f1a2b"/>
+            <rect x="10" y="13.5" width="1.7" height="1.7" fill="#0f1a2b"/>
+            <rect x="12.3" y="13.5" width="1.7" height="1.7" fill="#0f1a2b"/>
+          </svg>
+        </a>
+        <div class="label">על המשרד</div>
+      </div>
     </section>
+
+    <button id="aboutToggle" type="button" style="margin-top:22px;display:block;padding:12px 16px;border-radius:12px;border:1px solid var(--gold);background:transparent;color:var(--gold);text-align:center;font-size:14px;cursor:pointer;">אודות</button>
+
+    <div class="lang-switch" aria-label="בחירת שפה" style="margin-top:10px;display:flex;justify-content:center;gap:10px;align-items:center;">
+      <button class="lang-btn active" type="button">עברית</button>
+      <button class="lang-btn" type="button">العربية</button>
+    </div>
+
+    <div id="about" style="margin-top:16px;font-size:14px;line-height:1.6;color:#e8e8e8;display:none;">
+      בוגר תואר ראשון במשפטים (LLB) וחבר בלשכת עורכי הדין משנת 2006.<br>
+      בוגר תואר שני (L.L.M) במשפטים.<br>
+      בוגר תואר שני (M.A.) ביחסים בינלאומיים.<br><br>
+      תחומי עיסוקו: דיני נזיקין, רשלנות רפואית, תאונות דרכים, תאונות עבודה, ביטוח לאומי ומחלות מקצוע.<br>
+      דיני רשויות מקומיות ומנהלי, משפט וטכנולוגיה, משפט בינלאומי וזכויות אדם.
+    </div>
 
     <footer>© כל הזכויות שמורות למשרד עו״ד ג׳לאל דקואר</footer>
   </main>
+
+  <button id="accessToggle" class="access-toggle" type="button" aria-label="תפריט נגישות">♿</button>
+
+  <script>
+    (function(){
+      var aboutBtn=document.getElementById('aboutToggle');
+      var about=document.getElementById('about');
+      if(aboutBtn && about){
+        aboutBtn.addEventListener('click',function(){
+          if(about.style.display==='none' || !about.style.display){
+            about.style.display='block';
+          }else{
+            about.style.display='none';
+          }
+        });
+      }
+      var accessBtn=document.getElementById('accessToggle');
+      if(accessBtn){
+        accessBtn.addEventListener('click',function(){
+          document.body.classList.toggle('access-on');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
 </body>
 </html>
