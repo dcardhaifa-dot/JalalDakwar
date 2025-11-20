@@ -21,38 +21,15 @@
 
     .wrap{width:100%;max-width:520px;min-height:100vh;padding:0 20px 28px;display:flex;flex-direction:column;align-items:center}
 
-    .skip-link{position:absolute;left:-999px;top:0;background:#000;color:#fff;padding:10px 14px;z-index:200;border:2px solid var(--gold);border-radius:6px}
-    .skip-link:focus-visible{left:12px;top:12px;outline:3px solid #fff}
-
     .lang-switch{margin-top:10px;display:flex;justify-content:center;gap:10px;align-items:center}
     .lang-btn{border:1px solid var(--gold);background:transparent;color:var(--gold);border-radius:999px;padding:4px 10px;font-size:11px;cursor:pointer}
     .lang-btn.active{background:var(--gold);color:var(--bg)}
 
     .access-toggle{position:fixed;bottom:18px;left:18px;width:46px;height:46px;border-radius:50%;border:none;background:#0b88e6;color:#ffffff;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3)}
-    .access-toggle{position:fixed;bottom:18px;left:18px;width:46px;height:46px;border-radius:50%;border:none;background:#0b88e6;color:#ffffff;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:150;box-shadow:0 2px 8px rgba(0,0,0,.3)}
     .access-toggle svg{width:24px;height:24px}
     body.access-on{font-size:110%;background:#000}
     body.access-on h1,body.access-on h2{color:#fff}
     body.access-on .hero::after{background:rgba(0,0,0,.7)}
-
-    .access-panel{position:fixed;bottom:76px;left:18px;width:260px;max-width:90vw;background:#0f1a2b;color:#fff;border:1px solid var(--gold);border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,.45);padding:12px 14px;display:none;z-index:140}
-    .access-panel.open{display:block}
-    .access-panel h3{margin:0 0 8px;font-size:15px}
-    .access-panel p{margin:0 0 10px;font-size:12px;line-height:1.5}
-    .access-actions{display:flex;flex-direction:column;gap:8px}
-    .access-actions button{border:1px solid var(--gold);background:rgba(255,255,255,.08);color:var(--gold);border-radius:8px;padding:8px 10px;text-align:center;font-size:12px;cursor:pointer}
-    .access-actions button:focus-visible{outline:3px solid #fff;outline-offset:1px}
-    .focus-outline :focus-visible{outline:3px solid #ffd700;outline-offset:2px}
-    .underline-links a{text-decoration:underline}
-    .high-contrast{background:#000 !important;color:#fff !important}
-    .high-contrast h1,.high-contrast h2,.high-contrast .label{color:#fff !important}
-    .high-contrast .btn{background:#000 !important;color:#ffd700 !important;border-color:#ffd700}
-    .high-contrast .btn:hover{background:#ffd700 !important;color:#000 !important}
-    .high-contrast .access-panel{background:#000;color:#fff}
-    .high-contrast .lang-btn{color:#ffd700;border-color:#ffd700}
-    .high-contrast .lang-btn.active{background:#ffd700;color:#000}
-    .high-contrast footer{color:#fff}
-    .high-contrast .hero::after{background:rgba(0,0,0,.7)}
 
     /* רקע עם כימור קטן */
     .hero{position:relative;width:100%;height:180px;background:url('building.png') center/cover no-repeat;overflow:hidden;border-bottom-left-radius:40% 15%;border-bottom-right-radius:40% 15%;}
@@ -81,8 +58,6 @@
 </head>
 <body>
   <main class="wrap">
-  <a class="skip-link" href="#mainContent">דלג לתוכן המרכזי</a>
-  <main class="wrap" id="mainContent" tabindex="-1">
     <div class="hero">
       <header>
         <img src="logo.png" alt="לוגו המשרד">
@@ -97,7 +72,6 @@
     <h2 data-ar style="display:none">قانون الأضرار | السلطات المحلية والقضاء الإداري | القانون والتكنولوجيا | القانون الدولي وحقوق الإنسان</h2>
 
     <section class="actions">
-    <section class="actions" aria-label="קישורים מהירים">
       <!-- טלפון -->
       <div class="action">
         <a href="tel:048621216" class="btn" title="טלפון" aria-label="טלפון">
@@ -123,7 +97,44 @@
       </div>
 
       <!-- מייל -->
-@@ -138,68 +161,135 @@
+      <div class="action">
+        <a href="mailto:jalal@dakwar-law.com" class="btn" title="מייל" aria-label="מייל">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M4 6h16c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2zm0 2v.2l8 5 8-5V8H4z"/>
+          </svg>
+        </a>
+        <div class="label"><span data-he>מייל</span><span data-ar style="display:none">بريد</span></div>
+      </div>
+
+      <!-- אנשי קשר -->
+      <div class="action">
+        <a href="vcard.vcf" class="btn" title="אנשי קשר" aria-label="אנשי קשר">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="9" r="3"/><path d="M12 12.5c-2.4 0-4.2 1.4-5 3.4 1 .9 2.7 1.6 5 1.6s4-.7 5-1.6c-.8-2-2.6-3.4-5-3.4z"/></svg>
+        </a>
+        <div class="label"><span data-he>הוסף לאנשי קשר</span><span data-ar style="display:none">جهات اتصال</span></div>
+      </div>
+
+      <!-- ניווט -->
+      <div class="action">
+        <a href="https://www.waze.com/he/live-map/directions?to=ll.32.814338%2C34.997828" class="btn" title="ניווט" aria-label="ניווט">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a9 9 0 0 0-9 9c0 6.1 8.2 11 8.6 11.2.2.1.6.1.8 0C12.8 22 21 17.1 21 11A9 9 0 0 0 12 2zm0 12.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg>
+        </a>
+        <div class="label"><span data-he>ניווט</span><span data-ar style="display:none">اتجاهات</span></div>
+      </div>
+    </section>
+
+    <div style="margin-top:22px;display:flex;gap:12px;justify-content:center;align-items:stretch;width:100%;flex-wrap:nowrap;">
+      <button id="aboutToggle" type="button" style="padding:8px 0;border-radius:10px;border:1px solid var(--gold);background:transparent;color:var(--gold);text-align:center;font-size:13px;cursor:pointer;flex:1;min-height:38px;">
+        <span data-he>אודות</span><span data-ar style="display:none">نبذة عن المكتب</span>
+      </button>
+      <a href="https://www.psakdin.co.il/Lawyers/3582" style="padding:8px 0;border-radius:10px;border:1px solid var(--gold);background:transparent;color:var(--gold);text-align:center;font-size:13px;cursor:pointer;flex:1;min-height:38px;display:flex;align-items:center;justify-content:center;text-decoration:none;">
+        <span data-he>על המשרד</span><span data-ar style="display:none">عن المكتب</span>
+      </a>
+    </div>
+
+    <div class="lang-switch" aria-label="בחירת שפה">
+      <button class="lang-btn active" type="button">עברית</button>
+      <button class="lang-btn" type="button">العربية</button>
     </div>
 
     <div id="about" style="margin-top:16px;font-size:14px;line-height:1.6;color:#e8e8e8;display:none;">
@@ -150,19 +161,6 @@
   </main>
 
   <button id="accessToggle" class="access-toggle" type="button" aria-label="תפריט נגישות">
-  <aside id="accessPanel" class="access-panel" aria-live="polite" aria-label="תפריט נגישות">
-    <h3>הצהרת נגישות</h3>
-    <p>האתר מותאם להנחיות הנגישות בישראל ומאפשר שליטה בניגודיות, הדגשת קישורים והגדלת טקסט. ניתן לנווט באמצעות מקלדת ולקבל קווי מתאר ברורים לפוקוס.</p>
-    <div class="access-actions">
-      <button type="button" id="fontInc" aria-pressed="false">הגדלת גודל טקסט</button>
-      <button type="button" id="fontDec" aria-pressed="false">הקטנת גודל טקסט</button>
-      <button type="button" id="toggleContrast" aria-pressed="false">הפעלת ניגודיות גבוהה</button>
-      <button type="button" id="toggleUnderline" aria-pressed="false">הדגשת קישורים</button>
-      <button type="button" id="toggleFocus" aria-pressed="false">הוספת קווי מתאר למקלדת</button>
-    </div>
-  </aside>
-
-  <button id="accessToggle" class="access-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="תפריט נגישות">
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <circle cx="12" cy="12" r="10" fill="none" stroke="#ffffff" stroke-width="2"/>
       <circle cx="12" cy="8" r="2" fill="#ffffff"/>
@@ -197,65 +195,8 @@
       }
       var accessBtn=document.getElementById('accessToggle');
       if(accessBtn){
-      var accessPanel=document.getElementById('accessPanel');
-      var fontInc=document.getElementById('fontInc');
-      var fontDec=document.getElementById('fontDec');
-      var contrast=document.getElementById('toggleContrast');
-      var underline=document.getElementById('toggleUnderline');
-      var focus=document.getElementById('toggleFocus');
-
-      var baseFont=100;
-
-      function setAriaPressed(btn,state){
-        if(btn){btn.setAttribute('aria-pressed',state?'true':'false');}
-      }
-
-      if(accessBtn && accessPanel){
         accessBtn.addEventListener('click',function(){
           document.body.classList.toggle('access-on');
-          var open=!accessPanel.classList.contains('open');
-          accessPanel.classList.toggle('open',open);
-          this.setAttribute('aria-expanded',open?'true':'false');
-          if(open){
-            accessPanel.querySelector('button')?.focus();
-          }
-        });
-      }
-
-      if(fontInc){
-        fontInc.addEventListener('click',function(){
-          baseFont=Math.min(baseFont+10,150);
-          document.documentElement.style.fontSize=baseFont+'%';
-          setAriaPressed(this,true);
-        });
-      }
-
-      if(fontDec){
-        fontDec.addEventListener('click',function(){
-          baseFont=Math.max(baseFont-10,90);
-          document.documentElement.style.fontSize=baseFont+'%';
-          setAriaPressed(this,true);
-        });
-      }
-
-      if(contrast){
-        contrast.addEventListener('click',function(){
-          var state=document.body.classList.toggle('high-contrast');
-          setAriaPressed(this,state);
-        });
-      }
-
-      if(underline){
-        underline.addEventListener('click',function(){
-          var state=document.body.classList.toggle('underline-links');
-          setAriaPressed(this,state);
-        });
-      }
-
-      if(focus){
-        focus.addEventListener('click',function(){
-          var state=document.body.classList.toggle('focus-outline');
-          setAriaPressed(this,state);
         });
       }
     })();
