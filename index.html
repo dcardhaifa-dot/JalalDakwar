@@ -21,11 +21,37 @@
       justify-content:center;
     }
 
-    .wrap{width:100%;max-width:520px;min-height:100vh;padding:0 20px 28px;display:flex;flex-direction:column;align-items:center}
+    .wrap{
+      width:100%;
+      max-width:520px;
+      min-height:100vh;
+      padding:0 20px 28px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
 
-    .lang-switch{margin-top:10px;display:flex;justify-content:center;gap:10px;align-items:center}
-    .lang-btn{border:1px solid var(--gold);background:transparent;color:var(--gold);border-radius:999px;padding:4px 10px;font-size:11px;cursor:pointer}
-    .lang-btn.active{background:var(--gold);color:var(--bg)}
+    /* כפתורי שפה */
+    .lang-switch{
+      margin-top:10px;
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      align-items:center;
+    }
+    .lang-btn{
+      border:1px solid var(--gold);
+      background:transparent;
+      color:var(--gold);
+      border-radius:999px;
+      padding:4px 10px;
+      font-size:11px;
+      cursor:pointer;
+    }
+    .lang-btn.active{
+      background:var(--gold);
+      color:var(--bg);
+    }
 
     /* כפתור נגישות */
     .access-toggle{
@@ -46,8 +72,8 @@
       box-shadow:0 2px 8px rgba(0,0,0,.3);
     }
     .access-toggle img{
-      width:24px;
-      height:24px;
+      width:34px;
+      height:34px;
       display:block;
     }
 
@@ -97,22 +123,83 @@
     }
 
     /* רקע עם כימור קטן */
-    .hero{position:relative;width:100%;height:180px;background:url('building.png') center/cover no-repeat;overflow:hidden;border-bottom-left-radius:40% 15%;border-bottom-right-radius:40% 15%;}
-    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.15))}
+    .hero{
+      position:relative;
+      width:100%;
+      height:180px;
+      background:url('building.png') center/cover no-repeat;
+      overflow:hidden;
+      border-bottom-left-radius:40% 15%;
+      border-bottom-right-radius:40% 15%;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.15));
+    }
 
-    header{position:absolute;top:25%;left:50%;transform:translate(-50%,-50%);z-index:2;}
-    header img{height:72px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
+    header{
+      position:absolute;
+      top:25%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      z-index:2;
+    }
+    header img{
+      height:72px;
+      filter:drop-shadow(0 2px 6px rgba(0,0,0,.35));
+    }
 
     /* תמונת עו"ד מעל הרקע */
-    .photo{width:150px;height:150px;border-radius:50%;overflow:hidden;margin:-75px auto 15px;border:4px solid var(--gold);box-shadow:0 6px 18px rgba(0,0,0,.45);background:#1b273d;position:relative;z-index:3;}
-    .photo img{width:100%;height:100%;object-fit:cover}
+    .photo{
+      width:150px;
+      height:150px;
+      border-radius:50%;
+      overflow:hidden;
+      margin:-75px auto 15px;
+      border:4px solid var(--gold);
+      box-shadow:0 6px 18px rgba(0,0,0,.45);
+      background:#1b273d;
+      position:relative;
+      z-index:3;
+    }
+    .photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
 
-    h1{margin:4px 0 0;font-size:22px;text-align:center}
-    h2{margin:6px 0 12px;font-size:15px;color:var(--gold);font-weight:400;text-align:center}
+    h1{
+      margin:4px 0 0;
+      font-size:22px;
+      text-align:center;
+    }
+    h2{
+      margin:6px 0 12px;
+      font-size:15px;
+      color:var(--gold);
+      font-weight:400;
+      text-align:center;
+    }
 
     /* רשת כפתורים קומפקטית */
-    .actions{display:grid;grid-template-columns:repeat(3, 1fr);gap:14px 18px;width:100%;justify-items:center;margin-top:4px}
-    .action{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px}
+    .actions{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px 18px;
+      width:100%;
+      justify-items:center;
+      margin-top:4px;
+    }
+    .action{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      gap:6px;
+    }
     .btn{
       width:72px;
       height:72px;
@@ -126,15 +213,28 @@
       text-decoration:none;
       transition:.2s;
     }
-    .btn:hover{background:var(--gold);color:var(--bg)}
+    .btn:hover{
+      background:var(--gold);
+      color:var(--bg);
+    }
     .btn img{
-      width:24px;
-      height:24px;
+      width:48px;
+      height:48px;
+      object-fit:contain;
       display:block;
     }
-    .label{font-size:11px;color:var(--gold);opacity:.95}
+    .label{
+      font-size:11px;
+      color:var(--gold);
+      opacity:.95;
+    }
 
-    footer{margin-top:18px;font-size:12px;color:#c9cdd6;text-align:center}
+    footer{
+      margin-top:18px;
+      font-size:12px;
+      color:#c9cdd6;
+      text-align:center;
+    }
 
     /* מצבי ניגודיות + קו תחתון */
     body.contrast-dark{
@@ -167,6 +267,7 @@
     body.font-small .acc-btn{font-size:10px;}
   </style>
 </head>
+
 <body>
   <main class="wrap">
     <div class="hero">
@@ -175,10 +276,13 @@
       </header>
     </div>
 
-    <div class="photo"><img src="lawyer.png" alt="תמונת עו\"ד ג׳לאל דקואר"></div>
+    <div class="photo">
+      <img src="lawyer.png" alt="תמונת עו״ד ג׳לאל דקואר">
+    </div>
 
     <h1 data-he>עו״ד ג׳לאל עמאד דקואר</h1>
     <h1 data-ar style="display:none">المحامي جلال عماد دكوار</h1>
+
     <h2 data-he>דיני נזיקין | רשויות מקומיות ומנהלי | משפט וטכנולוגיה | משפט בינלאומי וזכויות אדם</h2>
     <h2 data-ar style="display:none">قانون الأضرار | السلطات المحلية والقضاء الإداري | القانون والتكنولوجيا | القانون الدولي وحقوق الإنسان</h2>
 
@@ -186,66 +290,91 @@
       <!-- טלפון -->
       <div class="action">
         <a href="tel:048621216" class="btn" title="טלפון" aria-label="טלפון">
-          <img src="phone.svg" alt="אייקון טלפון">
+          <img src="phone.svg" alt="">
         </a>
-        <div class="label"><span data-he>טלפון</span><span data-ar style="display:none">هاتف</span></div>
+        <div class="label">
+          <span data-he>טלפון</span>
+          <span data-ar style="display:none">هاتف</span>
+        </div>
       </div>
 
       <!-- וואטסאפ -->
       <div class="action">
         <a href="https://wa.me/972507863448" class="btn" title="וואטסאפ" aria-label="וואטסאפ">
-          <img src="whatsapp.svg" alt="אייקון וואטסאפ">
+          <img src="whatsapp.svg" alt="">
         </a>
-        <div class="label"><span data-he>וואטסאפ</span><span data-ar style="display:none">واتساب</span></div>
+        <div class="label">
+          <span data-he>וואטסאפ</span>
+          <span data-ar style="display:none">واتساب</span>
+        </div>
       </div>
 
       <!-- פייסבוק -->
       <div class="action">
-        <a href="https://facebook.com" class="btn" title="פייסבוק" aria-label="פייסבוק">
-          <img src="facebook.svg" alt="אייקון פייסבוק">
+        <a href="https://www.facebook.com/dakwar.law" class="btn" title="פייסבוק" aria-label="פייסבוק">
+          <img src="facebook.svg" alt="">
         </a>
-        <div class="label"><span data-he>פייסבוק</span><span data-ar style="display:none">فيسبوك</span></div>
+        <div class="label">
+          <span data-he>פייסבוק</span>
+          <span data-ar style="display:none">فيسبوك</span>
+        </div>
       </div>
 
       <!-- מייל -->
       <div class="action">
         <a href="mailto:jalal@dakwar-law.com" class="btn" title="מייל" aria-label="מייל">
-          <img src="email.svg" alt="אייקון מייל">
+          <img src="email.svg" alt="">
         </a>
-        <div class="label"><span data-he>מייל</span><span data-ar style="display:none">بريد</span></div>
+        <div class="label">
+          <span data-he>מייל</span>
+          <span data-ar style="display:none">بريد</span>
+        </div>
       </div>
 
-      <!-- אנשי קשר -->
+      <!-- הוסף לאנשי קשר -->
       <div class="action">
         <a href="vcard.vcf" class="btn" title="הוסף לאנשי קשר" aria-label="הוסף לאנשי קשר">
-          <img src="add contact.svg" alt="אייקון הוסף לאנשי קשר">
+          <img src="add-contact.svg" alt="">
         </a>
-        <div class="label"><span data-he>הוסף לאנשי קשר</span><span data-ar style="display:none">جهات اتصال</span></div>
+        <div class="label">
+          <span data-he>הוסף לאנשי קשר</span>
+          <span data-ar style="display:none">جهات اتصال</span>
+        </div>
       </div>
 
       <!-- ניווט -->
       <div class="action">
         <a href="https://www.waze.com/he/live-map/directions?to=ll.32.814338%2C34.997828" class="btn" title="ניווט" aria-label="ניווט">
-          <img src="waze.svg" alt="אייקון ניווט">
+          <img src="waze.svg" alt="">
         </a>
-        <div class="label"><span data-he>ניווט</span><span data-ar style="display:none">اتجاهات</span></div>
+        <div class="label">
+          <span data-he>ניווט</span>
+          <span data-ar style="display:none">اتجاهات</span>
+        </div>
       </div>
     </section>
 
+    <!-- אודות / על המשרד -->
     <div style="margin-top:22px;display:flex;gap:12px;justify-content:center;align-items:stretch;width:100%;flex-wrap:nowrap;">
-      <button id="aboutToggle" type="button" style="padding:8px 0;border-radius:10px;border:1px solid var(--gold);background:transparent;color:var(--gold);text-align:center;font-size:13px;cursor:pointer;flex:1;min-height:38px;">
-        <span data-he>אודות</span><span data-ar style="display:none">نبذة عن المكتب</span>
+      <button id="aboutToggle" type="button"
+        style="padding:8px 0;border-radius:10px;border:1px solid var(--gold);background:transparent;color:var(--gold);text-align:center;font-size:13px;cursor:pointer;flex:1;min-height:38px;">
+        <span data-he>אודות</span>
+        <span data-ar style="display:none">نبذة عن المكتب</span>
       </button>
-      <a href="https://www.psakdin.co.il/Lawyers/3582" style="padding:8px 0;border-radius:10px;border:1px solid var(--gold);background:transparent;color:var(--gold);text-align:center;font-size:13px;cursor:pointer;flex:1;min-height:38px;display:flex;align-items:center;justify-content:center;text-decoration:none;">
-        <span data-he>על המשרד</span><span data-ar style="display:none">عن المكتب</span>
+      <a href="https://www.psakdin.co.il/Lawyers/3582"
+        style="padding:8px 0;border-radius:10px;border:1px solid var(--gold);background:transparent;color:var(--gold);text-align:center;font-size:13px;cursor:pointer;flex:1;min-height:38px;display:flex;align-items:center;justify-content:center;text-decoration:none;">
+        <span data-he>על המשרד</span>
+        <span data-ar style="display:none">عن المكتب</span>
       </a>
     </div>
 
+    <!-- שפות -->
     <div class="lang-switch" aria-label="בחירת שפה">
       <button class="lang-btn active" type="button">עברית</button>
       <button class="lang-btn" type="button">العربية</button>
     </div>
 
+    <!-- טקסט אודות -->
     <div id="about" style="margin-top:16px;font-size:14px;line-height:1.6;color:#e8e8e8;display:none;">
       <div data-he>
         בוגר תואר ראשון במשפטים (LLB) וחבר בלשכת עורכי הדין משנת 2006.<br>
@@ -271,7 +400,7 @@
 
   <!-- כפתור נגישות -->
   <button id="accessToggle" class="access-toggle" type="button" aria-label="תפריט נגישות" aria-expanded="false">
-    <img src="נגשות.svg" alt="אייקון נגישות">
+    <img src="נגישות.svg" alt="אייקון נגישות">
   </button>
 
   <!-- פאנל נגישות -->
