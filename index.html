@@ -201,5 +201,54 @@
       }
     })();
   </script>
+  <!-- פאנל נגישות -->
+  <div id="accessPanel" class="access-panel" hidden style="position:fixed;bottom:74px;left:18px;width:260px;max-width:80vw;background:#fff;color:#000;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.35);z-index:200;font-size:14px;overflow:hidden">
+    <div style="background:#0b88e6;color:#fff;padding:10px;text-align:center;font-weight:600">תפריט נגישות</div>
+    <div style="padding:10px 0">
+      <button class="acc-btn" data-action="bigger" style="width:100%;padding:8px 14px;text-align:right;background:none;border:none;cursor:pointer">הגדלת טקסט</button>
+      <button class="acc-btn" data-action="smaller" style="width:100%;padding:8px 14px;text-align:right;background:none;border:none;cursor:pointer">הקטנת טקסט</button>
+      <button class="acc-btn" data-action="reset" style="width:100%;padding:8px 14px;text-align:right;background:none;border:none;cursor:pointer">איפוס</button>
+      <button class="acc-btn" data-action="contrast-dark" style="width:100%;padding:8px 14px;text-align:right;background:none;border:none;cursor:pointer">ניגודיות כהה</button>
+      <button class="acc-btn" data-action="contrast-light" style="width:100%;padding:8px 14px;text-align:right;background:none;border:none;cursor:pointer">ניגודיות בהירה</button>
+      <button class="acc-btn" data-action="underline" style="width:100%;padding:8px 14px;text-align:right;background:none;border:none;cursor:pointer">קו תחתון לקישורים</button>
+    </div>
+  </div>
+
+  <script>
+    // תפריט נגישות מלא
+    const accessBtn = document.getElementById('accessToggle');
+    const panel = document.getElementById('accessPanel');
+    let fontScale = 1;
+
+    accessBtn.addEventListener('click', () => {
+      panel.hidden = !panel.hidden;
+    });
+
+    document.querySelectorAll('.acc-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const action = btn.dataset.action;
+
+        if(action === 'bigger'){ fontScale = Math.min(1.6, fontScale + 0.1); document.body.style.fontSize = fontScale + 'em'; }
+        if(action === 'smaller'){ fontScale = Math.max(0.8, fontScale - 0.1); document.body.style.fontSize = fontScale + 'em'; }
+        if(action === 'reset'){
+          fontScale = 1;
+          document.body.style.fontSize = '';
+          document.body.classList.remove('contrast-dark','contrast-light','underline-links');
+        }
+        if(action === 'contrast-dark'){
+          document.body.classList.add('contrast-dark');
+          document.body.classList.remove('contrast-light');
+        }
+        if(action === 'contrast-light'){
+          document.body.classList.add('contrast-light');
+          document.body.classList.remove('contrast-dark');
+        }
+        if(action === 'underline'){
+          document.body.classList.toggle('underline-links');
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
