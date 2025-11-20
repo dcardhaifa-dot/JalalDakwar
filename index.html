@@ -43,9 +43,13 @@
       justify-content:center;
       cursor:pointer;
       z-index:100;
-      box-shadow:0 2px 8px rgba(0,0,0,.3)
+      box-shadow:0 2px 8px rgba(0,0,0,.3);
     }
-    .access-toggle svg{width:24px;height:24px}
+    .access-toggle img{
+      width:24px;
+      height:24px;
+      display:block;
+    }
 
     /* פאנל נגישות */
     .access-panel{
@@ -109,9 +113,25 @@
     /* רשת כפתורים קומפקטית */
     .actions{display:grid;grid-template-columns:repeat(3, 1fr);gap:14px 18px;width:100%;justify-items:center;margin-top:4px}
     .action{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px}
-    .btn{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--gold);background:rgba(255,255,255,.08);color:var(--gold);text-decoration:none;transition:.2s}
+    .btn{
+      width:72px;
+      height:72px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid var(--gold);
+      background:rgba(255,255,255,.08);
+      color:var(--gold);
+      text-decoration:none;
+      transition:.2s;
+    }
     .btn:hover{background:var(--gold);color:var(--bg)}
-    .btn svg{width:24px;height:24px}
+    .btn img{
+      width:24px;
+      height:24px;
+      display:block;
+    }
     .label{font-size:11px;color:var(--gold);opacity:.95}
 
     footer{margin-top:18px;font-size:12px;color:#c9cdd6;text-align:center}
@@ -166,7 +186,7 @@
       <!-- טלפון -->
       <div class="action">
         <a href="tel:048621216" class="btn" title="טלפון" aria-label="טלפון">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.2 2.3 3.1 4.2 5.4 5.4l1.8-1.8c.2-.2.5-.3.8-.2 1 .3 2 .5 3.1.5.4 0 .8.3.8.8v2.9c0 .4-.3.8-.8.8C10.3 21 3 13.7 3 4.8c0-.4.3-.8.8-.8H6.7c.4 0 .8.3.8.8 0 1.1.2 2.1.5 3.1.1.3 0 .6-.2.8l-1.8 1.7z"/></svg>
+          <img src="phone.svg" alt="אייקון טלפון">
         </a>
         <div class="label"><span data-he>טלפון</span><span data-ar style="display:none">هاتف</span></div>
       </div>
@@ -174,7 +194,7 @@
       <!-- וואטסאפ -->
       <div class="action">
         <a href="https://wa.me/972507863448" class="btn" title="וואטסאפ" aria-label="וואטסאפ">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.7 15l-1.2 4.4 4.5-1.2A10 10 0 1 0 12 2z"/></svg>
+          <img src="whatsapp.svg" alt="אייקון וואטסאפ">
         </a>
         <div class="label"><span data-he>וואטסאפ</span><span data-ar style="display:none">واتساب</span></div>
       </div>
@@ -182,7 +202,7 @@
       <!-- פייסבוק -->
       <div class="action">
         <a href="https://facebook.com" class="btn" title="פייסבוק" aria-label="פייסבוק">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 10h3l-1 4h-2v8h-4v-8H7v-4h2V8c0-2.2 1.3-5 5-5h3v4h-3c-.5 0-1 .5-1 1v2z"/></svg>
+          <img src="facebook.svg" alt="אייקון פייסבוק">
         </a>
         <div class="label"><span data-he>פייסבוק</span><span data-ar style="display:none">فيسبوك</span></div>
       </div>
@@ -190,17 +210,15 @@
       <!-- מייל -->
       <div class="action">
         <a href="mailto:jalal@dakwar-law.com" class="btn" title="מייל" aria-label="מייל">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M4 6h16c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2zm0 2v.2l8 5 8-5V8H4z"/>
-          </svg>
+          <img src="email.svg" alt="אייקון מייל">
         </a>
         <div class="label"><span data-he>מייל</span><span data-ar style="display:none">بريد</span></div>
       </div>
 
       <!-- אנשי קשר -->
       <div class="action">
-        <a href="vcard.vcf" class="btn" title="אנשי קשר" aria-label="אנשי קשר">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="9" r="3"/><path d="M12 12.5c-2.4 0-4.2 1.4-5 3.4 1 .9 2.7 1.6 5 1.6s4-.7 5-1.6c-.8-2-2.6-3.4-5-3.4z"/></svg>
+        <a href="vcard.vcf" class="btn" title="הוסף לאנשי קשר" aria-label="הוסף לאנשי קשר">
+          <img src="add contact.svg" alt="אייקון הוסף לאנשי קשר">
         </a>
         <div class="label"><span data-he>הוסף לאנשי קשר</span><span data-ar style="display:none">جهات اتصال</span></div>
       </div>
@@ -208,7 +226,7 @@
       <!-- ניווט -->
       <div class="action">
         <a href="https://www.waze.com/he/live-map/directions?to=ll.32.814338%2C34.997828" class="btn" title="ניווט" aria-label="ניווט">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a9 9 0 0 0-9 9c0 6.1 8.2 11 8.6 11.2.2.1.6.1.8 0C12.8 22 21 17.1 21 11A9 9 0 0 0 12 2zm0 12.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg>
+          <img src="waze.svg" alt="אייקון ניווט">
         </a>
         <div class="label"><span data-he>ניווט</span><span data-ar style="display:none">اتجاهات</span></div>
       </div>
@@ -253,11 +271,7 @@
 
   <!-- כפתור נגישות -->
   <button id="accessToggle" class="access-toggle" type="button" aria-label="תפריט נגישות" aria-expanded="false">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <circle cx="12" cy="12" r="10" fill="none" stroke="#ffffff" stroke-width="2"/>
-      <circle cx="12" cy="8" r="2" fill="#ffffff"/>
-      <path d="M7 11h10l-1 2-3 0v5h-2v-5l-3 0z" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+    <img src="נגשות.svg" alt="אייקון נגישות">
   </button>
 
   <!-- פאנל נגישות -->
