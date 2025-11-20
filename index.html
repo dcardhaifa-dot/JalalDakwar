@@ -17,7 +17,9 @@
       font-family:"Heebo",system-ui,sans-serif;
       background:var(--gradient);
       color:var(--text);
-      display:flex;justify-content:center}
+      display:flex;
+      justify-content:center;
+    }
 
     .wrap{width:100%;max-width:520px;min-height:100vh;padding:0 20px 28px;display:flex;flex-direction:column;align-items:center}
 
@@ -25,11 +27,70 @@
     .lang-btn{border:1px solid var(--gold);background:transparent;color:var(--gold);border-radius:999px;padding:4px 10px;font-size:11px;cursor:pointer}
     .lang-btn.active{background:var(--gold);color:var(--bg)}
 
-    .access-toggle{position:fixed;bottom:18px;left:18px;width:46px;height:46px;border-radius:50%;border:none;background:#0b88e6;color:#ffffff;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+    /* כפתור נגישות */
+    .access-toggle{
+      position:fixed;
+      bottom:18px;
+      left:18px;
+      width:46px;
+      height:46px;
+      border-radius:50%;
+      border:none;
+      background:#0b88e6;
+      color:#ffffff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      z-index:100;
+      box-shadow:0 2px 8px rgba(0,0,0,.3)
+    }
     .access-toggle svg{width:24px;height:24px}
-    body.access-on{font-size:110%;background:#000}
-    body.access-on h1,body.access-on h2{color:#fff}
-    body.access-on .hero::after{background:rgba(0,0,0,.7)}
+
+    /* פאנל נגישות */
+    .access-panel{
+      position:fixed;
+      bottom:74px;
+      left:18px;
+      width:260px;
+      max-width:80vw;
+      background:#ffffff;
+      color:#000;
+      border-radius:10px;
+      box-shadow:0 4px 12px rgba(0,0,0,.35);
+      z-index:200;
+      font-size:14px;
+      overflow:hidden;
+    }
+    .access-panel[hidden]{display:none;}
+    .access-panel-header{
+      background:#0b88e6;
+      color:#fff;
+      padding:10px;
+      text-align:center;
+      font-weight:600;
+    }
+    .access-list{
+      list-style:none;
+      margin:0;
+      padding:6px 0 8px;
+    }
+    .access-row{
+      border-top:1px solid #eee;
+    }
+    .acc-btn{
+      width:100%;
+      padding:8px 14px;
+      text-align:right;
+      background:none;
+      border:none;
+      cursor:pointer;
+      font:inherit;
+      display:block;
+    }
+    .acc-btn:hover{
+      background:#f3f6ff;
+    }
 
     /* רקע עם כימור קטן */
     .hero{position:relative;width:100%;height:180px;background:url('building.png') center/cover no-repeat;overflow:hidden;border-bottom-left-radius:40% 15%;border-bottom-right-radius:40% 15%;}
@@ -54,6 +115,36 @@
     .label{font-size:11px;color:var(--gold);opacity:.95}
 
     footer{margin-top:18px;font-size:12px;color:#c9cdd6;text-align:center}
+
+    /* מצבי ניגודיות + קו תחתון */
+    body.contrast-dark{
+      background:#000 !important;
+      color:#fff !important;
+    }
+    body.contrast-dark .hero::after{background:rgba(0,0,0,.7);}
+    body.contrast-light{
+      background:#ffffff !important;
+      color:#000000 !important;
+    }
+    body.contrast-light .hero::after{background:rgba(255,255,255,.6);}
+    body.underline-links a{
+      text-decoration:underline;
+    }
+
+    /* גדלי טקסט */
+    body.font-big h1{font-size:26px;}
+    body.font-big h2{font-size:18px;}
+    body.font-big .label,
+    body.font-big footer,
+    body.font-big .lang-btn,
+    body.font-big .acc-btn{font-size:13px;}
+
+    body.font-small h1{font-size:20px;}
+    body.font-small h2{font-size:13px;}
+    body.font-small .label,
+    body.font-small footer,
+    body.font-small .lang-btn,
+    body.font-small .acc-btn{font-size:10px;}
   </style>
 </head>
 <body>
@@ -64,7 +155,7 @@
       </header>
     </div>
 
-    <div class="photo"><img src="lawyer.png" alt="תמונת עו"ד ג׳לאל דקואר"></div>
+    <div class="photo"><img src="lawyer.png" alt="תמונת עו\"ד ג׳לאל דקואר"></div>
 
     <h1 data-he>עו״ד ג׳לאל עמאד דקואר</h1>
     <h1 data-ar style="display:none">المحامي جلال عماد دكوار</h1>
@@ -160,13 +251,39 @@
     </footer>
   </main>
 
-  <button id="accessToggle" class="access-toggle" type="button" aria-label="תפריט נגישות">
+  <!-- כפתור נגישות -->
+  <button id="accessToggle" class="access-toggle" type="button" aria-label="תפריט נגישות" aria-expanded="false">
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <circle cx="12" cy="12" r="10" fill="none" stroke="#ffffff" stroke-width="2"/>
       <circle cx="12" cy="8" r="2" fill="#ffffff"/>
       <path d="M7 11h10l-1 2-3 0v5h-2v-5l-3 0z" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </button>
+
+  <!-- פאנל נגישות -->
+  <div id="accessPanel" class="access-panel" hidden aria-label="תפריט נגישות">
+    <div class="access-panel-header">תפריט נגישות</div>
+    <ul class="access-list">
+      <li class="access-row">
+        <button type="button" class="acc-btn" data-action="bigger">הגדלת טקסט</button>
+      </li>
+      <li class="access-row">
+        <button type="button" class="acc-btn" data-action="smaller">הקטנת טקסט</button>
+      </li>
+      <li class="access-row">
+        <button type="button" class="acc-btn" data-action="reset">איפוס</button>
+      </li>
+      <li class="access-row">
+        <button type="button" class="acc-btn" data-action="contrast-dark">ניגודיות כהה</button>
+      </li>
+      <li class="access-row">
+        <button type="button" class="acc-btn" data-action="contrast-light">ניגודיות בהירה</button>
+      </li>
+      <li class="access-row">
+        <button type="button" class="acc-btn" data-action="underline">קו תחתון לקישורים</button>
+      </li>
+    </ul>
+  </div>
 
   <script>
     // החלפת שפה
@@ -180,75 +297,58 @@
       };
     });
 
-    // אודות טוגל
+    // טוגל אודות
     (function(){
-      var aboutBtn=document.getElementById('aboutToggle');
-      var about=document.getElementById('about');
+      const aboutBtn=document.getElementById('aboutToggle');
+      const about=document.getElementById('about');
       if(aboutBtn && about){
         aboutBtn.addEventListener('click',function(){
-          if(about.style.display==='none' || !about.style.display){
-            about.style.display='block';
-          }else{
-            about.style.display='none';
-          }
-        });
-      }
-      var accessBtn=document.getElementById('accessToggle');
-      if(accessBtn){
-        accessBtn.addEventListener('click',function(){
-          document.body.classList.toggle('access-on');
+          about.style.display = (about.style.display==='none' || !about.style.display) ? 'block' : 'none';
         });
       }
     })();
-  </script>
-  <!-- פאנל נגישות -->
-  <div id="accessPanel" class="access-panel" hidden style="position:fixed;bottom:74px;left:18px;width:260px;max-width:80vw;background:#fff;color:#000;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.35);z-index:200;font-size:14px;overflow:hidden">
-    <div style="background:#0b88e6;color:#fff;padding:10px;text-align:center;font-weight:600">תפריט נגישות</div>
-    <div style="padding:10px 0">
-      <button class="acc-btn" data-action="bigger" style="width:100%;padding:8px 14px;text-align:right;background:none;border:none;cursor:pointer">הגדלת טקסט</button>
-      <button class="acc-btn" data-action="smaller" style="width:100%;padding:8px 14px;text-align:right;background:none;border:none;cursor:pointer">הקטנת טקסט</button>
-      <button class="acc-btn" data-action="reset" style="width:100%;padding:8px 14px;text-align:right;background:none;border:none;cursor:pointer">איפוס</button>
-      <button class="acc-btn" data-action="contrast-dark" style="width:100%;padding:8px 14px;text-align:right;background:none;border:none;cursor:pointer">ניגודיות כהה</button>
-      <button class="acc-btn" data-action="contrast-light" style="width:100%;padding:8px 14px;text-align:right;background:none;border:none;cursor:pointer">ניגודיות בהירה</button>
-      <button class="acc-btn" data-action="underline" style="width:100%;padding:8px 14px;text-align:right;background:none;border:none;cursor:pointer">קו תחתון לקישורים</button>
-    </div>
-  </div>
 
-  <script>
-    // תפריט נגישות מלא
-    const accessBtn = document.getElementById('accessToggle');
-    const panel = document.getElementById('accessPanel');
-    let fontScale = 1;
+    // תפריט נגישות
+    (function(){
+      const accessToggle = document.getElementById('accessToggle');
+      const accessPanel  = document.getElementById('accessPanel');
 
-    accessBtn.addEventListener('click', () => {
-      panel.hidden = !panel.hidden;
-    });
+      if(accessToggle && accessPanel){
+        accessToggle.addEventListener('click', ()=>{
+          accessPanel.hidden = !accessPanel.hidden;
+          accessToggle.setAttribute('aria-expanded', accessPanel.hidden ? 'false' : 'true');
+        });
+      }
 
-    document.querySelectorAll('.acc-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const action = btn.dataset.action;
+      document.querySelectorAll('.acc-btn').forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          const action = btn.dataset.action;
 
-        if(action === 'bigger'){ fontScale = Math.min(1.6, fontScale + 0.1); document.body.style.fontSize = fontScale + 'em'; }
-        if(action === 'smaller'){ fontScale = Math.max(0.8, fontScale - 0.1); document.body.style.fontSize = fontScale + 'em'; }
-        if(action === 'reset'){
-          fontScale = 1;
-          document.body.style.fontSize = '';
-          document.body.classList.remove('contrast-dark','contrast-light','underline-links');
-        }
-        if(action === 'contrast-dark'){
-          document.body.classList.add('contrast-dark');
-          document.body.classList.remove('contrast-light');
-        }
-        if(action === 'contrast-light'){
-          document.body.classList.add('contrast-light');
-          document.body.classList.remove('contrast-dark');
-        }
-        if(action === 'underline'){
-          document.body.classList.toggle('underline-links');
-        }
+          if(action === 'bigger'){
+            document.body.classList.add('font-big');
+            document.body.classList.remove('font-small');
+          }
+          if(action === 'smaller'){
+            document.body.classList.add('font-small');
+            document.body.classList.remove('font-big');
+          }
+          if(action === 'reset'){
+            document.body.classList.remove('font-big','font-small','contrast-dark','contrast-light','underline-links');
+          }
+          if(action === 'contrast-dark'){
+            document.body.classList.add('contrast-dark');
+            document.body.classList.remove('contrast-light');
+          }
+          if(action === 'contrast-light'){
+            document.body.classList.add('contrast-light');
+            document.body.classList.remove('contrast-dark');
+          }
+          if(action === 'underline'){
+            document.body.classList.toggle('underline-links');
+          }
+        });
       });
-    });
+    })();
   </script>
-
 </body>
 </html>
