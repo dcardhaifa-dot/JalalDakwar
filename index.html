@@ -11,6 +11,21 @@
       --gold:#c6a664;
       --text:#ffffff;
     }
+
+    /* ====== פונט דוד בולד (נוסף לפי בקשתך) ====== */
+    @font-face {
+      font-family: 'DavidBold';
+      src: url('davidbd.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    /* ====== מחלקה לשם בעברית בלבד ====== */
+    .he-name {
+      font-family: 'DavidBold';
+      font-weight: 700;
+    }
+
     *{box-sizing:border-box}
     body{
       margin:0;
@@ -54,29 +69,29 @@
     }
 
     /* כפתור נגישות */
-   .access-toggle{
-  position:fixed;
-  bottom:18px;
-  left:18px;
-  width:46px;   /* היה 46 */
-  height:46px;  /* היה 46 */
-  border-radius:50%;
-  border:none;
-  background:#0b88e6;
-  color:#ffffff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  z-index:100;
-  box-shadow:0 2px 8px rgba(0,0,0,.3);
-}
+    .access-toggle{
+      position:fixed;
+      bottom:18px;
+      left:18px;
+      width:46px;
+      height:46px;
+      border-radius:50%;
+      border:none;
+      background:#0b88e6;
+      color:#ffffff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      z-index:100;
+      box-shadow:0 2px 8px rgba(0,0,0,.3);
+    }
 
-.access-toggle img{
-  width:34px;   /* היה 34 */
-  height:34px;  /* היה 34 */
-  display:block;
-}
+    .access-toggle img{
+      width:34px;
+      height:34px;
+      display:block;
+    }
 
     /* פאנל נגישות */
     .access-panel{
@@ -281,7 +296,10 @@
       <img src="lawyer.png" alt="תמונת עו״ד ג׳לאל דקואר">
     </div>
 
-    <h1 data-he>עו״ד ג׳לאל עמאד דקואר</h1>
+    <!-- ====== השם בעברית עם DavidBold (הוספתי class בלבד) ====== -->
+    <h1 data-he class="he-name">עו״ד ג׳לאל עמאד דקואר</h1>
+
+    <!-- הערבית נשארה 100% בלי שינוי -->
     <h1 data-ar style="display:none">المحامي جلال عماد دكوار</h1>
 
     <h2 data-he>דיני נזיקין | רשויות מקומיות ומנהלי | משפט וטכנולוגיה | משפט בינלאומי וזכויות אדם</h2>
@@ -321,179 +339,3 @@
         </div>
       </div>
 
-      <!-- מייל -->
-      <div class="action">
-        <a href="mailto:jalal@dakwar-law.com" class="btn" title="מייל" aria-label="מייל">
-          <img src="email.svg" alt="">
-        </a>
-        <div class="label">
-          <span data-he>מייל</span>
-          <span data-ar style="display:none">بريد</span>
-        </div>
-      </div>
-
-      <!-- הוסף לאנשי קשר -->
-      <div class="action">
-        <a href="vcard.vcf" class="btn" title="הוסף לאנשי קשר" aria-label="הוסף לאנשי קשר">
-          <img src="add-contact.svg" alt="">
-        </a>
-        <div class="label">
-          <span data-he>הוסף לאנשי קשר</span>
-          <span data-ar style="display:none">جهات اتصال</span>
-        </div>
-      </div>
-
-      <!-- ניווט -->
-      <div class="action">
-        <a href="https://www.waze.com/he/live-map/directions?to=ll.32.814338%2C34.997828" class="btn" title="ניווט" aria-label="ניווט">
-          <img src="waze.svg" alt="">
-        </a>
-        <div class="label">
-          <span data-he>ניווט</span>
-          <span data-ar style="display:none">اتجاهات</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- אודות / על המשרד -->
-    <div style="margin-top:22px;display:flex;gap:12px;justify-content:center;align-items:stretch;width:100%;flex-wrap:nowrap;">
-      <button id="aboutToggle" type="button"
-        style="padding:8px 0;border-radius:10px;border:1px solid var(--gold);background:transparent;color:var(--gold);text-align:center;font-size:13px;cursor:pointer;flex:1;min-height:38px;">
-        <span data-he>אודות</span>
-        <span data-ar style="display:none">نبذة عن المكتب</span>
-      </button>
-      <a href="https://www.psakdin.co.il/Lawyers/3582"
-        style="padding:8px 0;border-radius:10px;border:1px solid var(--gold);background:transparent;color:var(--gold);text-align:center;font-size:13px;cursor:pointer;flex:1;min-height:38px;display:flex;align-items:center;justify-content:center;text-decoration:none;">
-        <span data-he>על המשרד</span>
-        <span data-ar style="display:none">عن المكتب</span>
-      </a>
-    </div>
-
-    <!-- שפות -->
-    <div class="lang-switch" aria-label="בחירת שפה">
-      <button class="lang-btn active" type="button">עברית</button>
-      <button class="lang-btn" type="button">العربية</button>
-    </div>
-
-    <!-- טקסט אודות -->
-    <div id="about" style="margin-top:16px;font-size:14px;line-height:1.6;color:#e8e8e8;display:none;">
-      <div data-he>
-        בוגר תואר ראשון במשפטים (LLB) וחבר בלשכת עורכי הדין משנת 2006.<br>
-        בוגר תואר שני (L.L.M) במשפטים.<br>
-        בוגר תואר שני (M.A.) ביחסים בינלאומיים.<br><br>
-        תחומי עיסוקו: דיני נזיקין, רשלנות רפואית, תאונות דרכים, תאונות עבודה, ביטוח לאומי ומחלות מקצוע.<br>
-        דיני רשויות מקומיות ומנהלי, משפט וטכנולוגיה, משפט בינלאומי וזכויות אדם.
-      </div>
-      <div data-ar style="display:none">
-        حاصل على لقب أول في الحقوق (LL.B) ومحامٍ مسجّل في نقابة المحامين منذ عام 2006.<br>
-        حاصل على لقب ثانٍ (LL.M) في الحقوق.<br>
-        حاصل على لقب ثانٍ (M.A) في العلاقات الدولية.<br><br>
-        مجالات عمله: قانون الأضرار، الإهمال الطبي، حوادث الطرق، حوادث العمل، التأمين الوطني والأمراض المهنية.<br>
-        قانون السلطات المحلية والقضاء الإداري، القانون والتكنولوجيا، القانون الدولي وحقوق الإنسان.
-      </div>
-    </div>
-
-    <footer>
-      <span data-he>© כל הזכויות שמורות למשרד עו״ד ג׳לאל דקואר</span>
-      <span data-ar style="display:none">© جميع الحقوق محفوظة لمكتب المحامي جلال دكوار</span>
-    </footer>
-  </main>
-
-  <!-- כפתור נגישות -->
-  <button id="accessToggle" class="access-toggle">
-  <img src="accessibility.svg" alt="">
-
-</button>
-
-  <!-- פאנל נגישות -->
-  <div id="accessPanel" class="access-panel" hidden aria-label="תפריט נגישות">
-    <div class="access-panel-header">תפריט נגישות</div>
-    <ul class="access-list">
-      <li class="access-row">
-        <button type="button" class="acc-btn" data-action="bigger">הגדלת טקסט</button>
-      </li>
-      <li class="access-row">
-        <button type="button" class="acc-btn" data-action="smaller">הקטנת טקסט</button>
-      </li>
-      <li class="access-row">
-        <button type="button" class="acc-btn" data-action="reset">איפוס</button>
-      </li>
-      <li class="access-row">
-        <button type="button" class="acc-btn" data-action="contrast-dark">ניגודיות כהה</button>
-      </li>
-      <li class="access-row">
-        <button type="button" class="acc-btn" data-action="contrast-light">ניגודיות בהירה</button>
-      </li>
-      <li class="access-row">
-        <button type="button" class="acc-btn" data-action="underline">קו תחתון לקישורים</button>
-      </li>
-    </ul>
-  </div>
-
-  <script>
-    // החלפת שפה
-    document.querySelectorAll('.lang-btn').forEach(btn=>{
-      btn.onclick=function(){
-        document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
-        this.classList.add('active');
-        const ar=this.textContent.includes('العربية');
-        document.querySelectorAll('[data-he]').forEach(el=>el.style.display = ar?'none':'');
-        document.querySelectorAll('[data-ar]').forEach(el=>el.style.display = ar?'':'none');
-      };
-    });
-
-    // טוגל אודות
-    (function(){
-      const aboutBtn=document.getElementById('aboutToggle');
-      const about=document.getElementById('about');
-      if(aboutBtn && about){
-        aboutBtn.addEventListener('click',function(){
-          about.style.display = (about.style.display==='none' || !about.style.display) ? 'block' : 'none';
-        });
-      }
-    })();
-
-    // תפריט נגישות
-    (function(){
-      const accessToggle = document.getElementById('accessToggle');
-      const accessPanel  = document.getElementById('accessPanel');
-
-      if(accessToggle && accessPanel){
-        accessToggle.addEventListener('click', ()=>{
-          accessPanel.hidden = !accessPanel.hidden;
-          accessToggle.setAttribute('aria-expanded', accessPanel.hidden ? 'false' : 'true');
-        });
-      }
-
-      document.querySelectorAll('.acc-btn').forEach(btn=>{
-        btn.addEventListener('click', ()=>{
-          const action = btn.dataset.action;
-
-          if(action === 'bigger'){
-            document.body.classList.add('font-big');
-            document.body.classList.remove('font-small');
-          }
-          if(action === 'smaller'){
-            document.body.classList.add('font-small');
-            document.body.classList.remove('font-big');
-          }
-          if(action === 'reset'){
-            document.body.classList.remove('font-big','font-small','contrast-dark','contrast-light','underline-links');
-          }
-          if(action === 'contrast-dark'){
-            document.body.classList.add('contrast-dark');
-            document.body.classList.remove('contrast-light');
-          }
-          if(action === 'contrast-light'){
-            document.body.classList.add('contrast-light');
-            document.body.classList.remove('contrast-dark');
-          }
-          if(action === 'underline'){
-            document.body.classList.toggle('underline-links');
-          }
-        });
-      });
-    })();
-  </script>
-</body>
-</html>
